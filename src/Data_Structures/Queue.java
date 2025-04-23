@@ -1,4 +1,6 @@
-package IntNode;
+package Data_Structures;
+
+import Linked_List.IntNode;
 
 public class Queue {
    //parameters of queue

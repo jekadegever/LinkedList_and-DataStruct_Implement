@@ -1,4 +1,4 @@
-package IntNode;
+package Linked_List;
 
 public class IntListTwo {
     private IntNodeTwo _head;

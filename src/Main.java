@@ -1,11 +1,15 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-package IntNode;
+
+import Data_Structures.Stack;
+import Linked_List.IntList;
+import Linked_List.IntNode;
+
 public class Main {
     public static void main(String[] args) {
 
    //list learning
-    /*    IntNode a = new IntNode(2);
+     /*   IntNode a = new IntNode(2);
         IntNode b = new IntNode(17);
         IntNode c = new IntNode(13);
         IntNode d = new IntNode(7);

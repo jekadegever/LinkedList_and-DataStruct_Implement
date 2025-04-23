@@ -1,6 +1,6 @@
 package BinaryTree;
 
-public class Methods {
+public class BT_Methods {
     public static boolean search(Node root, int num){
         if(root == null){
             return false;
