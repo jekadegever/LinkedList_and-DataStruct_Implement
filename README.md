@@ -11,7 +11,7 @@ A simple educational implementation of common data structures in Java, including
 
 Designed for learning and practice purposes.
 
-> 📚 This project was created as part of the **Java course (Fall 2023 semester)**  
+> 📚 This project was created as part of the **Java course (semester 2023a)**  
 > at the **Open University of Israel**.
 
 ---
