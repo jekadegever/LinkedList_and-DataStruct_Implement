@@ -2,43 +2,83 @@ package Data_Structures;
 
 import Linked_List.IntNode;
 
+/**
+ * A basic implementation of a Queue data structure using a singly linked list.
+ * Supports typical enqueue and dequeue operations in FIFO order.
+ *
+ * @author Ivgeny Tokarzhevsky
+ */
 public class Queue {
-   //parameters of queue
+    // Reference to the front (head) and rear (tail) of the queue
     private IntNode _head;
     private IntNode _tail;
 
-
-    public Queue(){
+    /**
+     * Constructs an empty queue.
+     */
+    public Queue() {
         _head = null;
         _tail = null;
     }
 
-    public boolean isEmpty(){
+    /**
+     * Checks if the queue is empty.
+     *
+     * @return true if the queue contains no elements, false otherwise
+     */
+    public boolean isEmpty() {
         return _head == null;
     }
-    public void enqueue(int num){
-        //create IntNode eleent to be able send it in setNext method
+
+    /**
+     * Adds a new element to the end of the queue.
+     *
+     * @param num the integer value to enqueue
+     */
+    public void enqueue(int num) {
         IntNode temp = new IntNode(num, null);
-        //if there is already element in tail, make the tail point to new element
-        if(!(_tail == null)){
+
+        if (_tail != null) {
             _tail.setNext(temp);
         }
-        // now the new element is tail
         _tail = temp;
 
-        // if all was empty, the first element is tail and head
-        if(_head == null){
+        if (_head == null) {
             _head = _tail;
         }
     }
-    public int dequeue(){
+
+    /**
+     * Removes and returns the element at the front of the queue.
+     *
+     * @return the value at the front of the queue
+     * @throws IllegalStateException if the queue is empty
+     */
+    public int dequeue() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Cannot dequeue from an empty queue.");
+        }
+
         int temp = _head.getValue();
         _head = _head.getNext();
-        return temp;
 
+        if (_head == null) {
+            _tail = null; // queue became empty
+        }
+
+        return temp;
     }
-    public int first(){
+
+    /**
+     * Returns the element at the front of the queue without removing it.
+     *
+     * @return the value at the front of the queue
+     * @throws IllegalStateException if the queue is empty
+     */
+    public int first() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Cannot access first element of an empty queue.");
+        }
         return _head.getValue();
     }
-
 }
